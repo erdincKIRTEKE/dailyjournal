@@ -1,0 +1,28 @@
+
+<%-include('partials/header.ejs')%>
+
+<h1>Home</h1>
+
+<p>
+    <%=homeStartingContent%>
+</p>
+
+
+<%if(locals.diaries){%>
+
+    <%diaries.forEach(diary => {%>
+        <h2>
+            <%=diary.title%>
+        </h2>
+        <p>
+            <%=diary.postBody.slice(0,99)+'...'%>
+
+          <a href="/posts/<%=diary.title%>" >Read More</a> 
+        </p>
+    <%})%>
+<%}%>
+
+
+
+
+<%-include('partials/footer.ejs')%>
